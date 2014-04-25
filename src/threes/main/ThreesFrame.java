@@ -8,7 +8,6 @@ package threes.main;
 
 import java.awt.BorderLayout;
 import java.awt.Insets;
-import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import threes.game.GameBoardPanel;
 import threes.game.GameStatus;
@@ -24,15 +23,18 @@ public class ThreesFrame extends javax.swing.JFrame {
     private MouseListener mouseListener;
     private GameMusic musicPlay = new GameMusic(GameMusic.class.getResource("ThreesOST.wav")); 
     private boolean isMusicPlay = false;
+    
     /**
      * Creates new form ThreesFrame
      */
-
-
+    
     public ThreesFrame() {
         initComponents();
         initMyComponents();
         //setTitle("Threes!");
+//        ImageIcon icon = new ImageIcon("app_icon.png");  
+//        Image image = icon.getImage();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("app_icon.png")).getImage());
         musicPlay.start(); //BGM plays once. 
         isMusicPlay = true;
         mouseListener = new MouseListener(this);
@@ -64,13 +66,13 @@ public class ThreesFrame extends javax.swing.JFrame {
 	stopMusicButton.setContentAreaFilled(false);//除去默认的背景填充，下同
 
         newGameButton.setBorderPainted(false);
-        newGameButton.setMargin(new Insets(0,0,0,0));//将边框外的上下左右空间设置为0
-	newGameButton.setIconTextGap(0);//将标签中显示的文本和图标之间的间隔量设置为0
-	newGameButton.setBorderPainted(false);//不打印边框
-	newGameButton.setBorder(null);//除去边框
-	newGameButton.setText(null);//除去按钮的默认名称
-	newGameButton.setFocusPainted(false);//除去焦点的框
-	newGameButton.setContentAreaFilled(false);//除去默认的背景填充
+        newGameButton.setMargin(new Insets(0,0,0,0));
+	newGameButton.setIconTextGap(0);
+	newGameButton.setBorderPainted(false);
+        newGameButton.setBorder(null);
+	newGameButton.setText(null);
+	newGameButton.setFocusPainted(false);
+	newGameButton.setContentAreaFilled(false);
         
         pack();
     }
