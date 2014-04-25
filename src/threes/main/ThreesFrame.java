@@ -20,8 +20,8 @@ import threes.music.GameMusic;
  * @author Legend
  */
 public class ThreesFrame extends javax.swing.JFrame {
-    private MouseListener mouseListener;
-    private GameMusic musicPlay = new GameMusic(GameMusic.class.getResource("ThreesOST.wav")); 
+    private final MouseListener mouseListener;
+    private final GameMusic musicPlay; 
     private boolean isMusicPlay = false;
     
     /**
@@ -34,6 +34,7 @@ public class ThreesFrame extends javax.swing.JFrame {
         //setTitle("Threes!");
 //        ImageIcon icon = new ImageIcon("app_icon.png");  
 //        Image image = icon.getImage();
+        this.musicPlay = new GameMusic(GameMusic.class.getResource("ThreesOST.wav"));
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("app_icon.png")).getImage());
         musicPlay.start(); //BGM plays once. 
         isMusicPlay = true;
